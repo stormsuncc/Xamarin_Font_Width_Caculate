@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:Xamarin_Font_Width_Caculate"
              x:Class="Xamarin_Font_Width_Caculate.MainPage">
 
     <StackLayout x:Name="xContainer">
@@ -11,7 +12,7 @@
         <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
 
         <StackLayout Orientation="Horizontal">
-            <Label x:Name="xMessageLabel" FontSize="20" BackgroundColor="Red" MinimumWidthRequest="100" WidthRequest="100" Text="{Binding ShowText}" />
+            <views:MyLabel x:Name="xMessageLabel" FontSize="20" BackgroundColor="Red" MinimumWidthRequest="100" WidthRequest="100" Text="{Binding ShowText}" />
             <Label />
         </StackLayout>
         

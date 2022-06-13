@@ -29,8 +29,8 @@ namespace Xamarin_Font_Width_Caculate
         private string messageLabelWidth;
         public String MessageLabelWidth { get => messageLabelWidth; private set { messageLabelWidth = value; OnPropertyChanged(); } }
 
-        private double fontWidth;
-        public double FontWidth { get => fontWidth; private set { fontWidth = value; OnPropertyChanged(); } }
+        private string fontWidth;
+        public string FontWidth { get => fontWidth; private set { fontWidth = value; OnPropertyChanged(); } }
 
         public MainPage()
         {
@@ -62,11 +62,13 @@ namespace Xamarin_Font_Width_Caculate
             MessageLabelWidth = $"{xMessageLabel.Width}";
 
             var service = DependencyService.Get<ICalculateTextWidthService>();
-            FontWidth = service.calculateWidth("は", 20);
+
+            var fw = service.calculateWidth("は", 20);
+            FontWidth = $"{service.calculateWidth("は", 20)} / {service.calculateWidthPixel("は", 20)}" ;
 
             int labelWidth = 100;
             int maxLine = 2;
-            int charatorSize = ((int)(labelWidth / fontWidth)) * maxLine;
+            int charatorSize = ((int)(labelWidth / fw)) * maxLine;
 
             ShowText = ShowText.Substring(0, charatorSize);
 

@@ -28,7 +28,14 @@ namespace Xamarin_Font_Width_Caculate.iOS
 
         public double calculateWidthPixel(string text, int textSize)
         {
-            throw new NotImplementedException();
+            var uiLabel = new UILabel();
+            var font = uiLabel.Font.WithSize(textSize);
+            var attrs = new UIStringAttributes() {
+                Font = font,
+            };
+            var size  = new NSString(text).GetSizeUsingAttributes(attrs);
+
+            return size.Width;
         }
     }
 }
