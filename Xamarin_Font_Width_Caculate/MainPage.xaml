@@ -2,14 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:Xamarin_Font_Width_Caculate"
+             
              x:Class="Xamarin_Font_Width_Caculate.MainPage">
 
     <StackLayout x:Name="xContainer">
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
+
+        <Button Text="OpenCarouselViewTestPage" Clicked="Button_Clicked"/>
+
+        <Label BackgroundColor="Yellow" TextType="Html" Text="{Binding HtmlString}" MinimumHeightRequest="800" HeightRequest="800"/>
 
         <StackLayout Orientation="Horizontal">
             <views:MyLabel x:Name="xMessageLabel" FontSize="20" 
@@ -39,6 +39,8 @@
         <Label Text="密度" />
         <Label Text="{Binding ScreenDensity}" />
         <BoxView HeightRequest="2" Color="Black"/>
+
+        <Label ></Label>
         
     </StackLayout>
 

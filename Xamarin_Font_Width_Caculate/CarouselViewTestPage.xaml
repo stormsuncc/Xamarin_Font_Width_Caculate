@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Font_Width_Caculate.CarouselViewTestPage">
+    <ContentPage.Content>
+        <Grid RowSpacing="0" Padding="0" Margin="0" ColumnSpacing="0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="90"/>
+            </Grid.RowDefinitions>
+
+            <CarouselView Margin="0" HeightRequest="100" BackgroundColor="CadetBlue" Loop="False" Grid.Row="2" PeekAreaInsets="50" ItemsSource="{Binding Datas}" >
+                <CarouselView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10" 
+                                       SnapPointsType="Mandatory" SnapPointsAlignment="Center"/>
+                </CarouselView.ItemsLayout>
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0" Padding="0" ColumnSpacing="0" RowSpacing="0">
+                            <Frame HasShadow="True" CornerRadius="5" Margin="5" Padding="0">
+                                <BoxView Color="AliceBlue"/>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <BoxView Grid.Row="3" Color="LightBlue"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -36,6 +36,9 @@ namespace Xamarin_Font_Width_Caculate
         private string fontWidth;
         public string FontWidth { get => fontWidth; private set { fontWidth = value; OnPropertyChanged(); } }
 
+        private string htmlString;
+        public string HtmlString { get => htmlString; private set { htmlString = value; OnPropertyChanged(); } }
+
         public MainPage()
         {
             InitializeComponent();
@@ -52,6 +55,15 @@ namespace Xamarin_Font_Width_Caculate
             });
 
             ShowFormattedText = fs;
+
+            StringBuilder sbHtml = new StringBuilder();
+            sbHtml.AppendLine($"<div style=\"background-color:DodgerBlue; height:100px;\">");
+            sbHtml.AppendLine($"<span>");
+            sbHtml.AppendLine($"hello world!");
+            sbHtml.AppendLine($"</span>");
+            sbHtml.AppendLine($"</div>");
+
+            HtmlString = sbHtml.ToString();
         }
 
         
@@ -138,6 +150,11 @@ namespace Xamarin_Font_Width_Caculate
             var handler = PropertyChanged;
             if (handler != null)
                 handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+           await Application.Current.MainPage.Navigation.PushAsync(new CarouselViewTestPage());
         }
     }
 }
