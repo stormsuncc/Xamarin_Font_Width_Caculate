@@ -14,6 +14,10 @@ namespace Xamarin_Font_Width_Caculate
     {
         private string showText;
         public string ShowText { get => showText; private set { showText = value;  OnPropertyChanged(); } }
+
+        private FormattedString showFormattedText;
+        public FormattedString ShowFormattedText { get => showFormattedText; private set { showFormattedText = value; OnPropertyChanged(); } }
+
         /// <summary>
         /// 屏幕宽高 (in pixels)
         /// </summary>
@@ -38,7 +42,16 @@ namespace Xamarin_Font_Width_Caculate
             xMessageLabel.SizeChanged += SizeChangedEventHandler;
             BindingContext = this;
             ShowText = "こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！";
-            
+
+
+
+            FormattedString fs = "";
+            fs.Spans.Add(new Span() { 
+                Text= "こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！こにちは！",
+                TextColor=Color.Red,
+            });
+
+            ShowFormattedText = fs;
         }
 
         
@@ -52,6 +65,9 @@ namespace Xamarin_Font_Width_Caculate
         void initData()
         {
             var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
+
+            //(int) (mainDisplayInfo.Width / mainDisplayInfo.Density)
+
 
             ScreenSizePixel = $"{mainDisplayInfo.Width} x {mainDisplayInfo.Height}";
             ScreenSizeNoPixel = $"{Application.Current.MainPage.Width} x {Application.Current.MainPage.Width}";
