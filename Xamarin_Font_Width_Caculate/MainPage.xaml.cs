@@ -143,6 +143,23 @@ namespace Xamarin_Font_Width_Caculate
 
 
 
+        
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+           await Application.Current.MainPage.Navigation.PushAsync(new CarouselViewTestPage());
+        }
+
+        private async void Button2_Clicked(object sender, EventArgs e)
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new ListViewUnevenRowsTextPage());
+        }
+
+        private async void Button3_Clicked(object sender, EventArgs e)
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new FlexLayoutTestPage());
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -150,11 +167,6 @@ namespace Xamarin_Font_Width_Caculate
             var handler = PropertyChanged;
             if (handler != null)
                 handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        private async void Button_Clicked(object sender, EventArgs e)
-        {
-           await Application.Current.MainPage.Navigation.PushAsync(new CarouselViewTestPage());
         }
     }
 }

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Font_Width_Caculate.FlexLayoutTestPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="DeepSkyBlue">
+            <FlexLayout BackgroundColor="SkyBlue"  Wrap="Wrap" >
+                <BoxView HeightRequest="50" WidthRequest="50" Color="Red"/>
+                <BoxView HeightRequest="50" WidthRequest="80" Color="Blue"/>
+                <BoxView HeightRequest="50" WidthRequest="100" Color="Green"/>
+                <BoxView HeightRequest="50" WidthRequest="50" Color="Yellow"/>
+                <BoxView HeightRequest="50" WidthRequest="190" Color="Fuchsia"/>
+                <BoxView HeightRequest="50" WidthRequest="80" Color="Orange"/>
+                <BoxView HeightRequest="50" WidthRequest="160" Color="Black"/>
+            </FlexLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
